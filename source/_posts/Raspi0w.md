@@ -1,22 +1,17 @@
 ---
 title: 树莓派ZeroW入坑指南
 date: 2017-12-23 10:48:20
-tags: EmbDev
-comments: true
+tags: [技术,树莓派]
 ---
-# 效果图  
-先上一张Raspberry Pi Zero W 原貌
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fmqiu614ojj30k00cigmv.jpg)
 
-![zeroW](https://ws1.sinaimg.cn/large/006tKfTcly1fmqinc7cy5j3160160gqs.jpg)
-
-# 起源
 说起创客不得不提到开源硬件Raspberry Pi(树莓派)。它是一款基于ARM的微型电脑主板，以MicroSD卡为硬盘，提供HDMI和USB等外部接口，可连接显示器和键鼠。以上部件全部整合在一张仅比信用卡稍大的主板上，具备所有PC的基本功能只需接通显示器和键盘，就能执行如电子表格、文字处理、玩游戏、播放高清视频等诸多功能。二百出头的价格，有没有长草?
+<!-- more-->
 
 ![](https://ws3.sinaimg.cn/large/006tKfTcly1fmqiqkpbdpj30k00b6jsb.jpg)
 
 前不久忙完课题的我入手了树莓派3B拔草，后期有了Windows10 IoT系统加持感觉潜力无穷！但试用几天下来3B给我的感觉还是体积太大，发热明显。经过一番搜索，树莓派Zero w进入视线！
 
-![](https://ws3.sinaimg.cn/large/006tKfTcly1fmqiu614ojj30k00cigmv.jpg)
 
 # 配置参数
 树莓派Zero w是树莓派基金会今年二月底为庆祝其第五个生日发布的特别版，本质上是树莓派Zero加Wi-Fi蓝牙。树莓派Zero W售价10美元，使用与3B相同的Cypress CYW43438无线芯片，提供802.11n无线局域网和蓝牙4.1连接。
@@ -59,19 +54,16 @@ comments: true
 首先在SD卡boot分区中新建wap_supplicant.conf文件，然后使用Notepad++写入如图内容。
 
 ```
-#This is /boot/wpa_supplicant.conf
-
+# This is /boot/wpa_supplicant.conf
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=CN
-
 network={
     ssid="WiFi名称1"
     psk="WiFi密码1"
     key_mgmt=WPA-PSK
     priority=5
 }
-
 network={
     ssid="WiFi名称2"
     psk="WiFi密码2"
@@ -91,11 +83,15 @@ network={
 
 ![](https://ws4.sinaimg.cn/large/006tKfTcly1fmqjeb0oldj30hs0b7dga.jpg)
 
+# 效果图  
+上一张Raspberry Pi Zero W 高清果照
+
+![zeroW](https://ws1.sinaimg.cn/large/006tKfTcly1fmqinc7cy5j3160160gqs.jpg)
+
+
 # 尾声
 最后放张ZeroW和3B的对比图结题
 
 ![](https://ws4.sinaimg.cn/large/006tKfTcly1fmqjehnu91j30k00f0ta7.jpg)
 
 Single core power !!!
-
-![打赏二维码](https://ws4.sinaimg.cn/large/006tKfTcly1fmqjh9e3hzj30en0403yw.jpg)
